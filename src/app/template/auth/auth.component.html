@@ -1,0 +1,30 @@
+<div id="login-body">
+  <div id="header">
+    <img src="../../../assets/U_logo-white.png">
+    <span>Вход в систему</span>
+  </div>
+  <br>
+  <mat-card class="login-card">
+    <mat-card-content>
+      <form [formGroup]="profileForm" (ngSubmit)="login()">
+        <div class="inputs">
+          <mat-form-field appearance="outline">
+            <mat-label>Логин</mat-label>
+            <input matInput placeholder="Ваш логин..." type="text" name="username" autocomplete="on" tabindex="1" required formControlName="login">
+
+          </mat-form-field>
+        </div>
+        <div class="inputs">
+          <mat-form-field appearance="outline">
+            <mat-label>Пароль</mat-label>
+            <input matInput placeholder="Ваш пароль..." name="password" type="password" autocomplete="on" tabindex="2" required formControlName="password">
+          </mat-form-field>
+        </div>
+        <div id="button-row">
+          <button mat-button color="primary" id="login-forgotten-button" (click)="forgotPassword()" type="button">Забыли пароль?</button>
+          <button mat-raised-button color="primary" id="login-button" type="submit">Войти</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

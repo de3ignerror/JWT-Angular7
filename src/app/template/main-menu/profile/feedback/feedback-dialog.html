@@ -1,0 +1,19 @@
+<div id="header">
+  <h2>Обратная связь</h2>
+</div>
+<div class="inputs">
+  <mat-form-field appearance="outline">
+    <mat-label>Тема сообщения</mat-label>
+    <input matInput placeholder="Тема сообщения..." autocomplete="on" tabindex="1" required [(ngModel)]="Title">
+  </mat-form-field>
+</div>
+<div class="inputs">
+  <mat-form-field appearance="outline">
+    <mat-label>Текст сообщения</mat-label>
+    <textarea matInput placeholder="Ваше сообщение..." type="text" tabindex="2" required [(ngModel)]="Article"> </textarea>
+  </mat-form-field>
+</div>
+<div id="button-row">
+  <button mat-raised-button color="primary" id="login-button" (click)="sendMessage()" (keyup.enter)="sendMessage()">Отправить</button>
+</div>
+

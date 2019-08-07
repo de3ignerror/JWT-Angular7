@@ -1,0 +1,10 @@
+<mat-form-field class="example-full-width">
+  <input type="text" matInput [formControl]="myControl"
+         [matAutocomplete]="auto" (ngModelChange)="updatedVal($event)"
+         onfocus="this.value=''" onblur="this.value='Поиск'" >
+  <mat-autocomplete #auto="matAutocomplete">
+    <mat-option *ngFor="let option of filteredOptions | async" [value]="option" [ngClass]="{'hide-autocomplete': !showAutocomplete}">
+      {{option.Name}}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>

@@ -1,0 +1,37 @@
+$hover-color: #3f51b5;
+
+.matMenuDiv {
+  position: relative;
+  float: left;
+  padding: 5px 5px 5px 5px;
+  margin-right: 40px;
+  margin-left: 15px;
+}
+
+mat-menu.mat-menu-content:first-child {
+  margin-left: 15px;
+}
+
+.mat-list-header {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+mat-list-item {
+  margin: -10px;
+  :hover {
+    color: $hover-color;
+  }
+}
+
+::ng-deep .mat-menu-panel {
+  max-width: none !important;
+  display: flex !important;
+  flex-flow: column wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+button {
+  padding: 3px 10px;
+}

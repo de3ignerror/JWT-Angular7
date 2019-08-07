@@ -1,0 +1,12 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Холдинг</mat-label>
+    <input type="text" matInput [formControl]="SearchControl" [matAutocomplete]="auto"
+           placeholder="Введите наименование">
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option" >
+        {{option.Name}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>

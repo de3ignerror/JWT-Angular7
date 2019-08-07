@@ -1,0 +1,5 @@
+<mat-form-field appearance="legacy">
+  <mat-label>{{labelChild}}</mat-label>
+  <input matInput [type]="type" required [(ngModel)]="initValue"  (ngModelChange)="onValueChange($event)" *ngIf="required">
+  <input matInput [type]="type" [(ngModel)]="initValue"  (ngModelChange)="onValueChange($event)" *ngIf="!required">
+</mat-form-field>

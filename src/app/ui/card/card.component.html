@@ -1,0 +1,37 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Добавить банк</mat-card-title><app-paginator></app-paginator>
+  </mat-card-header>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <app-input-field
+      [initValue]="''"
+      [required]="true"
+      [labelChild]="'Название'"
+      (valueChange)="Output($event)"></app-input-field>
+    <app-input-select
+    [labelChild]="'Selector'"
+    [required]="true"
+    [choosing]="array"
+    (valueChange)="Output($event)"></app-input-select>
+    <app-input-search
+    [labelChild]="'Поиск'"
+    [choosing]="array1"
+    (valueChange)="Output($event)"></app-input-search>
+    <app-input-date
+    [labelChild]="'Дата'"
+    [required]="true"
+    (valueChange)="Output($event)"></app-input-date>
+    <app-input-textarea
+    [labelChild]="'Поле для ввода текста'"
+    [initValue]="'Что-нибудь сюда писать будем'"
+    [required]="true"
+    (valueChange)="Output($event)"></app-input-textarea>
+    <!--Слева - переменные дочернего компонента, справа - родителя. Квадратные скобки - ввод данных, круглые вывод-->
+    <app-input-checkbox
+      (valueChange)="Output($event)"
+      [initValue]="valParent2"
+      [labelChild]="txt"></app-input-checkbox>
+    <button mat-button (click)="test1()">test</button>
+  </mat-card-content>
+</mat-card>

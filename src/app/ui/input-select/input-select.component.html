@@ -1,0 +1,12 @@
+<mat-form-field>
+  <mat-select placeholder='{{labelChild}}' *ngIf="!required">
+    <mat-option *ngFor="let selector of choosing" [value]="selector.value" (click)="onValueChange(selector.value)">
+      {{selector.viewValue}}
+    </mat-option>
+  </mat-select>
+  <mat-select placeholder='{{labelChild}}' required *ngIf="required">
+    <mat-option *ngFor="let selector of choosing" [value]="selector.value" (click)="onValueChange(selector.value)">
+      {{selector.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
