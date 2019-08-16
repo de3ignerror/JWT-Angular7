@@ -10,30 +10,21 @@ import {RefreshTokenInterceptor} from './core/_helpers/apply-token.interceptor';
 
 import {AuthComponent} from './template/auth/auth.component';
 import { MainMenuComponent } from './template/main-menu/main-menu.component';
-import { SearchComponent } from './template/main-menu/search/search.component';
-import { MenuComponent } from './template/main-menu/menu/menu.component';
-import {ProfileComponent} from './template/main-menu/profile/profile.component';
-import {FeedbackDialogComponent, FeedbackComponent} from './template/main-menu/profile/feedback/feedback.component';
-import { BodyComponent } from './template/body/body.component';
 import {AuthenticationService} from './core/_services';
 import {TestMaterialModule} from './material-module';
 import { PageComponent } from './template/page.component';
 
 import {environment} from '../environments/environment';
+import { SidebarMenuComponent } from './template/sidebar-menu/sidebar-menu.component';
 
 
 @NgModule({
-  entryComponents: [FeedbackDialogComponent, FeedbackComponent],
+  entryComponents: [],
   declarations: [
     AuthComponent,
     MainMenuComponent,
-    SearchComponent,
-    MenuComponent,
-    ProfileComponent,
-    FeedbackComponent,
-    FeedbackDialogComponent,
-    BodyComponent,
-    PageComponent
+    PageComponent,
+    SidebarMenuComponent
   ],
   imports: [
     BrowserModule,

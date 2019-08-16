@@ -1,0 +1,82 @@
+.background-sky
+  background-color: #1976d2
+  background: linear-gradient(145deg,#0d47a1,#42a5f5)
+  color: #fff
+
+.hero
+  display: -webkit-flex
+  display: flex
+  -webkit-flex-direction: column
+  flex-direction: column
+  -webkit-justify-content: center
+  justify-content: center
+  -webkit-align-items: center
+  align-items: center
+  position: absolute
+  width: 100%
+  min-height: 150px
+  height: 50vh
+  max-height: 560px
+  box-sizing: border-box
+  padding: 48px 48px 32px
+  overflow: hidden
+  -webkit-transform: skewY(8deg)
+  transform: skewY(8deg)
+  -webkit-transform-origin: 100%
+  transform-origin: 100%
+
+  @media screen and (min-height: 640px)
+  .hero
+    height: 53vh
+
+  @media screen and (min-height: 800px)
+  .hero
+    height: 60vh
+
+  @media screen and (min-height: 950px)
+  .hero
+    height: 70vh
+
+header
+  position: relative
+
+.main-body-container
+  width: 100%
+  position: relative
+  display: flex
+  justify-content: space-between
+
+
+@media screen and (max-width: 1024px)
+  .main-body
+    position: relative
+    width: 100%
+    display: flex
+    flex-flow: row nowrap
+    justify-content: space-around
+    align-items: stretch
+    align-content: flex-start
+
+
+@media screen and (min-width: 1024px)
+  .main-body
+    position: relative
+    width: 100%
+    display: flex
+    flex-flow: row nowrap
+    justify-content: space-around
+    align-items: stretch
+    align-content: flex-start
+
+
+
+.main-body-nocenter
+  position: relative
+  margin: 11px 6px 6px 6px
+  flex: 1
+
+
+.main-body-center
+  position: relative
+  margin: 11px 11px 11px 11px
+  flex: 5

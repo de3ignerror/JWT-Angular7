@@ -1,18 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../core/_services';
-import {CoreDataService} from '../core/_services/core-data.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './page.component.html',
-  styleUrls: ['./page.component.scss']
+  styleUrls: ['./page.component.sass']
 })
 export class PageComponent implements OnInit {
-
-  constructor(public coreData: CoreDataService,public auth: AuthenticationService) { }
+  fragment = '';
+  constructor(public auth: AuthenticationService,
+              private route: ActivatedRoute) { }
 
   ngOnInit() {
-    // this.coreData.getOrdersCounter().subscribe(res=>console.log(res))
+    this.route.fragment.subscribe(fragment => { this.fragment = fragment; });
   }
 
 }

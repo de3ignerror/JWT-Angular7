@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 import { User } from '../_models/user';
 import {Router} from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { MessagesService } from './messages.service';
+
 
 
 @Injectable({ providedIn: 'root' })
@@ -15,7 +15,7 @@ export class AuthenticationService {
     public currentUser: Observable<User>;
     public helper = new JwtHelperService();
 
-    constructor(private http: HttpClient,  private router: Router, private ms: MessagesService ) {
+    constructor(private http: HttpClient,  private router: Router ) {
         this.currentUserSubject = new BehaviorSubject<User>(new User(false));
         this.currentUser = this.currentUserSubject.asObservable();
     }
@@ -29,14 +29,12 @@ export class AuthenticationService {
             .pipe(map(res => {
                 // login successful if there's a jwt token in the response
                 if (res && res.res['token'] && !res.res['error']) {
-                  console.log(res)
                     // store user details and jwt token in local storage to keep user logged in between page refreshes
                     const decodedToken = this.helper.decodeToken(res.res['token']);
                     this.currentUserSubject.next(new User(true, decodedToken.user, decodedToken.role, res.res['token'], res.res['refreshToken'], decodedToken.exp, decodedToken.id));
                     this.router.navigate(['']);
                    return true;
                 } else if (res && res.res['error'] && res.res['message']){
-                  this.ms.openSnackBar(res.res['message'], '');
                   return false; //В случае ошибки авторизации
                 } else {
                   return false; //В случае ошибки соединения

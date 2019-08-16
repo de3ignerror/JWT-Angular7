@@ -1,2 +1,15 @@
-<app-main-menu *ngIf="auth.currentUserValue.enabled"></app-main-menu>
-<app-body></app-body>
+<header>
+  <app-main-menu *ngIf="auth.currentUserValue.enabled"></app-main-menu>
+  <div class="background-sky hero" *ngIf="!auth.currentUserValue.enabled"></div>
+</header>
+<div class="main-body-container">
+  <div class="main-body">
+    <div class="main-body-nocenter" *ngIf="auth.currentUserValue.enabled">
+      <app-sidebar-menu ></app-sidebar-menu>
+    </div>
+    <div class="main-body-center mat-elevation-z6">
+      <router-outlet></router-outlet>
+    </div>
+
+  </div>
+</div>
